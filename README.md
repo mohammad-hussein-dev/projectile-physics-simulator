@@ -1,5 +1,10 @@
-## 📊 Sample Output (English)
+## 📊 Sample Output
 
+### English Version
+
+**Terminal Output:**
+
+```bash
 ========================================
 🚀 Projectile Physics Simulator
 ========================================
@@ -10,11 +15,19 @@ Enter angle (degrees): 45
    Range: 10.20 meters
    Max Height: 2.55 meters
    Time of Flight: 1.44 seconds
+```
+
+**Trajectory Plot:**
 
 ![Trajectory](trajectory_en.png)
 
-## 📊 نمونه خروجی (فارسی)
+---
 
+### نسخه‌ی فارسی
+
+**خروجی ترمینال:**
+
+```bash
 ========================================
 🚀 شبیه‌ساز حرکت پرتابه
 ========================================
@@ -25,5 +38,8 @@ Enter angle (degrees): 45
    برد پرتابه: 10.20 متر
    حداکثر ارتفاع: 2.55 متر
    زمان کل پرواز: 1.44 ثانیه
+```
+
+**نمودار مسیر:**
 
 ![Trajectory](trajectory.png)

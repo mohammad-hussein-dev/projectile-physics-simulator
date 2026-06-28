@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/projectile_simulator/__init__.py
+src/projectile_simulator/cli.py
+src/projectile_simulator/physics.py
+src/projectile_simulator/visualizer.py
+src/projectile_simulator.egg-info/PKG-INFO
+src/projectile_simulator.egg-info/SOURCES.txt
+src/projectile_simulator.egg-info/dependency_links.txt
+src/projectile_simulator.egg-info/entry_points.txt
+src/projectile_simulator.egg-info/requires.txt
+src/projectile_simulator.egg-info/top_level.txt
+tests/test_physics.py

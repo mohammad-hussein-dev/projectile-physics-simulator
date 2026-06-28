@@ -1,0 +1,2 @@
+[console_scripts]
+projectile = projectile_simulator.cli:main

@@ -1,0 +1,16 @@
+[project]
+name = "projectile-simulator"
+version = "0.1.0"
+description = "A 2D projectile motion simulator using physics equations"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.5.0",
+]
+
+[project.scripts]
+projectile = "projectile_simulator.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

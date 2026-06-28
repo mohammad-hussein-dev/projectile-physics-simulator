@@ -42,4 +42,4 @@ Enter angle (degrees): 45
 
 **نمودار مسیر:**
 
-![Trajectory](trajectory.png)
+![Trajectory](trajectory_fa.png)

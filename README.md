@@ -1,6 +1,7 @@
 # 🚀 Projectile Physics Simulator
 
 [![CI](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator/branch/main/graph/badge.svg)](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 

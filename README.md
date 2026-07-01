@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Projectile Physics Simulator
 
 [![CI](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml)

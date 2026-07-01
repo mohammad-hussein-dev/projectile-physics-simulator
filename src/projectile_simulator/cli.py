@@ -69,7 +69,7 @@ def main() -> None:
         default="fa",
         help="Choose language: fa (Persian) or en (English)"
     )
-    args = parser.parse_args()
+    args = parser.parse_args()  # pragma: no cover
 
     # Load UI texts based on the selected language
     texts = get_texts(args.lang)

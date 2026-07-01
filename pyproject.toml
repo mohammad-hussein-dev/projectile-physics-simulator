@@ -1,1 +1,39 @@
-[محتوای pyproject.toml]
+[project]
+name = "projectile-simulator"
+version = "0.1.0"
+description = "A 2D projectile motion simulator using physics equations"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.5.0",
+]
+
+[project.scripts]
+projectile = "projectile_simulator.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I", "N", "D", "UP"]
+ignore = ["D100", "D104"]
+
+[tool.mypy]
+python_version = "3.8"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v --cov=src/projectile_simulator --cov-report=term --cov-report=html --cov-report=xml"
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = [
+    "ignore:Matplotlib is currently using agg:UserWarning",
+    "ignore:FigureCanvasAgg is non-interactive.*cannot be shown:UserWarning",
+]

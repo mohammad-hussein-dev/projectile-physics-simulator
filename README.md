@@ -1,11 +1,29 @@
-# 🚀 Projectile Physics Simulator
+## 📋 Projectile Physics Simulator
 
 [![CI](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator/branch/main/graph/badge.svg)](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
-> A 2D projectile motion simulator built with Python and matplotlib — turning kinematic equations into visual trajectories.
+> **A 2D projectile motion simulator built with Python and matplotlib** — turning kinematic equations into visual trajectories.
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Installation & Usage](#-installation--usage)
+- [Sample Output](#-sample-output)
+- [Testing](#-testing)
+- [Project Structure](#-project-structure)
+- [Development Workflow](#-development-workflow)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
 ---
 
@@ -15,19 +33,30 @@ This project simulates the trajectory of a projectile launched with a given **in
 
 Perfect for students, educators, and anyone interested in the intersection of physics and programming.
 
-### ✨ Features
+**Perfect for:**
+- Learning physics through interactive visualization
+- Teaching projectile motion concepts
+- Showcasing clean Python code with scientific computing
+- Portfolio projects for aspiring developers
 
-- 🎯 **Accurate Physics** — Uses standard kinematic equations (`g = 9.8 m/s²`)
-- 📊 **Live Plotting** — Visualizes the trajectory using `matplotlib`
-- 🌍 **Bilingual** — Supports both Persian (`fa`) and English (`en`) output
-- ⚡ **CLI Interface** — Simple and intuitive command-line usage
-- ✅ **100% Test Coverage** — Fully tested with `pytest`
+---
+
+## ✨ Features
+
+| Feature | Description |
+| :--- | :--- |
+| 🎯 **Accurate Physics** | Uses standard kinematic equations (`g = 9.8 m/s²`) |
+| 📊 **Live Plotting** | Visualizes the trajectory using `matplotlib` |
+| 🌍 **Bilingual** | Supports both Persian (`fa`) and English (`en`) output |
+| ⚡ **CLI Interface** | Simple and intuitive command-line usage |
+| ✅ **100% Test Coverage** | Fully tested with `pytest` |
+| 🧹 **Clean Code** | Well-structured, modular, and maintainable |
 
 ---
 
 ## 🧮 Physics Behind It
 
-The simulation uses the following equations:
+The simulation uses the following kinematic equations:
 
 | Parameter | Formula |
 | :--- | :--- |
@@ -39,7 +68,20 @@ The simulation uses the following equations:
 
 ---
 
-## 🛠️ Installation & Usage
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+| :--- | :--- |
+| **Language** | Python 3.8+ |
+| **Scientific Computing** | NumPy, Matplotlib |
+| **Testing** | pytest, pytest-cov |
+| **Code Quality** | Black, Ruff, MyPy |
+| **CI/CD** | GitHub Actions, Codecov |
+| **Package Management** | setuptools, pyproject.toml |
+
+---
+
+## 🚀 Installation & Usage
 
 ### 1. Clone the repository
 
@@ -48,7 +90,7 @@ git clone https://github.com/mohammad-hussein-dev/projectile-physics-simulator.g
 cd projectile-physics-simulator
 ```
 
-### 2. Set up a virtual environment (optional but recommended)
+### 2. Set up a virtual environment (recommended)
 
 ```bash
 python -m venv .venv
@@ -84,7 +126,7 @@ The program will then display the calculated results and show a trajectory plot.
 
 ### English Version
 
-```bash
+```
 ========================================
 🚀 Projectile Physics Simulator
 ========================================
@@ -103,7 +145,7 @@ Enter angle (degrees): 45
 
 ### نسخه‌ی فارسی
 
-```bash
+```
 ========================================
 🚀 شبیه‌ساز حرکت پرتابه
 ========================================
@@ -124,11 +166,23 @@ Enter angle (degrees): 45
 
 This project uses `pytest` for unit testing with **100% test coverage**.
 
-Run the tests:
+### Run all tests
 
 ```bash
 pytest tests/ -v --cov=src/projectile_simulator --cov-report=term
 ```
+
+### Run with coverage report
+
+```bash
+pytest tests/ -v --cov=src/projectile_simulator --cov-report=html
+```
+
+Open `htmlcov/index.html` in your browser for detailed coverage breakdown.
+
+### Test coverage badge
+
+[![codecov](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator/branch/main/graph/badge.svg)](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator)
 
 ---
 
@@ -139,40 +193,93 @@ projectile-physics-simulator/
 ├── src/
 │   └── projectile_simulator/
 │       ├── __init__.py
-│       ├── __main__.py
-│       ├── cli.py
-│       ├── physics.py
-│       └── visualizer.py
+│       ├── __main__.py          # Entry point for the package
+│       ├── cli.py               # Command-line interface
+│       ├── physics.py           # Physics calculations
+│       └── visualizer.py        # Plotting and visualization
 ├── tests/
+│   ├── __init__.py
 │   ├── test_cli.py
 │   ├── test_main.py
 │   ├── test_physics.py
 │   └── test_visualizer.py
-├── pyproject.toml
-├── README.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── .gitignore
 ├── LICENSE
-└── .github/workflows/ci.yml
+├── pyproject.toml               # Project metadata & dependencies
+└── README.md
 ```
+
+---
+
+## 🛠️ Development Workflow
+
+### Commit Convention
+
+Following [Conventional Commits](https://www.conventionalcommits.org/):
+
+```bash
+feat(physics): add drag force calculation
+fix(visualizer): correct axis labels
+refactor(cli): simplify argument parsing
+docs(readme): update installation guide
+test(physics): add edge case tests
+```
+
+### Code Quality Tools
+
+| Tool | Purpose |
+| :--- | :--- |
+| **Black** | Code formatting |
+| **Ruff** | Linting & import sorting |
+| **MyPy** | Static type checking |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have ideas for improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit your changes**: `git commit -m 'feat: add amazing feature'`
+4. **Push to the branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+**Before submitting a PR, ensure:**
+- ✅ All tests pass (`pytest`)
+- ✅ Code is formatted (`black .`)
+- ✅ Linting passes (`ruff check .`)
+- ✅ No commented-out code or debug prints
+- ✅ New features include tests
+- ✅ Documentation is updated
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
 
 ---
 
 ## 👨‍💻 Author
 
-**Mohammad Hussein** — [GitHub](https://github.com/mohammad-hussein-dev)
+**Mohammad Hussein**  
+- 🌐 GitHub: [@mohammad-hussein-dev](https://github.com/mohammad-hussein-dev)  
+- 📧 Email: [king.mohamd.09876@gmail.com](mailto:king.mohamd.09876@gmail.com)  
+- 💬 Telegram: [@mohammad_hussein_dev](https://t.me/mohammad_hussein_dev)
+
+> *"I don't just write code — I simulate the universe."*
 
 ---
 
-⭐ If you found this project helpful, consider giving it a star on GitHub!
-```
+## ⭐ Support the Project
+
+If you found this project helpful, please consider giving it a **star** on GitHub! ⭐  
+It helps others discover it and motivates further development.
+
+---
+
+**Built with 🚀 and Python**

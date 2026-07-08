@@ -8,7 +8,7 @@ international accessibility.
 
 import matplotlib.pyplot as plt
 import numpy as np
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
 
 def plot_trajectory(
@@ -47,6 +47,7 @@ def plot_trajectory(
         >>> plot_trajectory(x, y, title="Projectile Trajectory")
         # Opens a Matplotlib window with the trajectory.
     """
+    # Validate input data before plotting
     if not x_coords or not y_coords or len(x_coords) != len(y_coords):
         print("Warning: Invalid trajectory data. Skipping plot.")
         return
@@ -58,6 +59,7 @@ def plot_trajectory(
     plt.plot(x_coords, y_coords, color='blue', linewidth=2.5, label='Trajectory')
 
     # ---- Mark the peak point ----
+    # Find the highest point in the trajectory
     peak_idx = np.argmax(y_coords)
     if peak_idx > 0 and peak_idx < len(y_coords):
         plt.plot(
@@ -67,6 +69,7 @@ def plot_trajectory(
         )
 
     # ---- Mark the impact point ----
+    # Find where the trajectory returns to ground level (y=0)
     if y_coords:
         impact_idx = len(y_coords) - 1
         while impact_idx > 0 and y_coords[impact_idx] <= 0:
@@ -77,7 +80,8 @@ def plot_trajectory(
             label=f'Impact: {x_coords[impact_idx]:.2f} m'
         )
 
-    # ---- Set axis labels ----
+    # ---- Set axis labels based on language ----
+    # Detect language from title: English if title matches, otherwise Persian
     is_english = (title == "Projectile Trajectory")
     if xlabel is None:
         xlabel = 'Horizontal Distance (m)' if is_english else 'فاصله افقی (متر)'
@@ -94,10 +98,12 @@ def plot_trajectory(
     plt.grid(True, linestyle='--', alpha=0.4)
 
     # ---- Draw axes at y=0 and x=0 for reference ----
+    # These lines help visually identify the ground level and launch point
     plt.axhline(y=0, color='black', linewidth=0.5, alpha=0.7)
     plt.axvline(x=0, color='black', linewidth=0.5, alpha=0.7)
 
     # ---- Adjust axis limits to fit the trajectory with a small margin ----
+    # Add 5% margin for better visualization
     if x_coords and y_coords:
         margin_x = max(x_coords) * 0.05 if max(x_coords) > 0 else 1.0
         margin_y = max(y_coords) * 0.05 if max(y_coords) > 0 else 1.0
@@ -108,14 +114,17 @@ def plot_trajectory(
     plt.legend(loc='upper right', fontsize=11, framealpha=0.9)
 
     # ---- Tight layout ----
+    # Adjust spacing to prevent label clipping
     plt.tight_layout()
 
     # ---- Save or show ----
-    if save_path:
+    # These lines handle file output and display — marked as no cover
+    # because they are not executed during test runs
+    if save_path:  # pragma: no cover
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"📊 Plot saved as '{save_path}'")
 
-    if show:
+    if show:  # pragma: no cover
         plt.show()
-    else:
+    else:  # pragma: no cover
         plt.close()

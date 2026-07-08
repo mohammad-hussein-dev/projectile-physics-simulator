@@ -110,6 +110,34 @@ You will see:
 
 ---
 
+## 🌐 Bilingual Output
+
+The simulator supports both **English** and **Persian (فارسی)** output formats.
+
+### How to switch language:
+
+**Option 1: Set environment variable**
+```bash
+export LANG=fa  # for Persian
+export LANG=en  # for English (default)
+python -m projectile_simulator
+```
+
+**Option 2: Pass argument to CLI** (if implemented)
+```bash
+python src/projectile_simulator/cli.py --lang fa
+python src/projectile_simulator/cli.py --lang en
+```
+
+### Language Outputs
+
+| Language | Terminal Output | Plot Image |
+| :--- | :---: | :---: |
+| **English** | ✅ | `trajectory_en.png` |
+| **Persian (فارسی)** | ✅ | `trajectory_fa.png` |
+
+---
+
 ## 🖼️ Demo
 
 | English | Persian (فارسی) |

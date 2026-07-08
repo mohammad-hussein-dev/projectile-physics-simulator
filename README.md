@@ -1,13 +1,13 @@
-## 📋 Projectile Physics Simulator
+# 🔬 Projectile Physics Simulator
 
 [![CI](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammad-hussein-dev/projectile-physics-simulator/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator/branch/main/graph/badge.svg)](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator)
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
-> **A 2D projectile motion simulator built with Python and matplotlib** — turning kinematic equations into visual trajectories.
+> **A scientific and educational tool for modeling projectile motion** — turning physics equations into visual trajectories with Python.
 
 ---
 
@@ -29,15 +29,15 @@
 
 ## 📖 Overview
 
-This project simulates the trajectory of a projectile launched with a given **initial velocity** and **angle**. It calculates key physics parameters — **range**, **maximum height**, and **time of flight** — and visualizes the motion in a clean, interactive plot.
+**Projectile Physics Simulator** is a scientific and educational Python tool for modeling and visualizing projectile motion under gravity. It uses Newtonian physics equations to calculate trajectory parameters such as range, maximum height, and flight time, with optional air resistance support.
 
-Perfect for students, educators, and anyone interested in the intersection of physics and programming.
+The project features a clean, modular architecture with bilingual support (Persian/English), making it ideal for physics students, educators, and anyone interested in computational physics.
 
 **Perfect for:**
-- Learning physics through interactive visualization
+- Learning physics through interactive simulation
 - Teaching projectile motion concepts
 - Showcasing clean Python code with scientific computing
-- Portfolio projects for aspiring developers
+- Portfolio projects for aspiring computational scientists
 
 ---
 
@@ -45,26 +45,14 @@ Perfect for students, educators, and anyone interested in the intersection of ph
 
 | Feature | Description |
 | :--- | :--- |
-| 🎯 **Accurate Physics** | Uses standard kinematic equations (`g = 9.8 m/s²`) |
-| 📊 **Live Plotting** | Visualizes the trajectory using `matplotlib` |
-| 🌍 **Bilingual** | Supports both Persian (`fa`) and English (`en`) output |
-| ⚡ **CLI Interface** | Simple and intuitive command-line usage |
-| ✅ **100% Test Coverage** | Fully tested with `pytest` |
-| 🧹 **Clean Code** | Well-structured, modular, and maintainable |
-
----
-
-## 🧮 Physics Behind It
-
-The simulation uses the following kinematic equations:
-
-| Parameter | Formula |
-| :--- | :--- |
-| **Range (R)** | `R = (v₀² × sin(2θ)) / g` |
-| **Max Height (H)** | `H = (v₀² × sin²(θ)) / (2g)` |
-| **Time of Flight (T)** | `T = (2 × v₀ × sin(θ)) / g` |
-
-> Where `v₀` is initial velocity (m/s), `θ` is launch angle (degrees), and `g = 9.8 m/s²`.
+| **Physics Calculations** | Accurate computation of range, max height, flight time, and trajectory points |
+| **Air Resistance** | Optional simplified drag model for more realistic simulations |
+| **2D Visualization** | Trajectory plotting with matplotlib showing velocity vectors, peak, and impact points |
+| **Bilingual Support** | Full support for both **Persian (فارسی)** and **English** interfaces |
+| **Modular Code** | Clean, well-structured, and maintainable Python code |
+| **CLI Interface** | Command-line interface for quick simulations |
+| **CI/CD** | GitHub Actions with linting, testing, and coverage |
+| **Testing** | Unit tests with pytest and coverage reporting |
 
 ---
 
@@ -73,11 +61,12 @@ The simulation uses the following kinematic equations:
 | Category | Technologies |
 | :--- | :--- |
 | **Language** | Python 3.8+ |
-| **Scientific Computing** | NumPy, Matplotlib |
+| **Scientific Computing** | NumPy |
+| **Visualization** | Matplotlib |
 | **Testing** | pytest, pytest-cov |
-| **Code Quality** | Black, Ruff, MyPy |
+| **Code Quality** | Black, Ruff, MyPy, Pre-commit |
 | **CI/CD** | GitHub Actions, Codecov |
-| **Package Management** | setuptools, pyproject.toml |
+| **OS** | Arch Linux (development), Any Linux / macOS / Windows (runtime) |
 
 ---
 
@@ -97,92 +86,82 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-### 3. Install the package
+### 3. Install dependencies
 
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
-### 4. Run the simulator
+### 4. Run the simulation
 
 ```bash
-# Persian (default)
-projectile
-
-# English
-projectile --lang en
+python -m projectile_simulator
 ```
 
-You will be prompted to enter:
+Or use the CLI interface:
 
-- **Initial velocity** (m/s)
-- **Launch angle** (degrees)
+```bash
+python src/projectile_simulator/cli.py
+```
 
-The program will then display the calculated results and show a trajectory plot.
+You will see:
+- **Trajectory parameters** (range, max height, flight time)
+- **2D plot** showing the projectile path with velocity vectors
+
+---
+
+## 🖼️ Demo
+
+![Trajectory Plot](trajectory_en.png)
+
+*The plot shows the projectile trajectory (blue curve), velocity vectors (red arrows), and key points (peak and impact).*
 
 ---
 
 ## 📊 Sample Output
 
-### English Version
+### Terminal Output
 
 ```
-========================================
 🚀 Projectile Physics Simulator
-========================================
-Enter initial velocity (m/s): 10
-Enter angle (degrees): 45
+
+Initial velocity: 50.0 m/s
+Launch angle: 45.0°
+Gravity: 9.81 m/s²
 
 📊 Results:
-   Range: 10.20 meters
-   Max Height: 2.55 meters
-   Time of Flight: 1.44 seconds
+  Range: 254.84 m
+  Max Height: 63.71 m
+  Flight Time: 7.21 s
 ```
-
-![Trajectory](trajectory_en.png)
-
----
-
-### نسخه‌ی فارسی
-
-```
-========================================
-🚀 شبیه‌ساز حرکت پرتابه
-========================================
-سرعت اولیه (m/s) را وارد کنید: 10
-زاویه (درجه) را وارد کنید: 45
-
-📊 نتایج:
-   برد پرتابه: 10.20 متر
-   حداکثر ارتفاع: 2.55 متر
-   زمان کل پرواز: 1.44 ثانیه
-```
-
-![Trajectory](trajectory_fa.png)
 
 ---
 
 ## 🧪 Testing
 
-This project uses `pytest` for unit testing with **100% test coverage**.
-
-### Run all tests
+Run the test suite with:
 
 ```bash
-pytest tests/ -v --cov=src/projectile_simulator --cov-report=term
+pytest tests/
 ```
 
-### Run with coverage report
+Generate a coverage report:
 
 ```bash
-pytest tests/ -v --cov=src/projectile_simulator --cov-report=html
+pytest --cov=src tests/
 ```
 
-Open `htmlcov/index.html` in your browser for detailed coverage breakdown.
+Check code style:
 
-### Test coverage badge
+```bash
+ruff check .
+```
 
-[![codecov](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator/branch/main/graph/badge.svg)](https://codecov.io/gh/mohammad-hussein-dev/projectile-physics-simulator)
+Format code:
+
+```bash
+black .
+```
 
 ---
 
@@ -190,96 +169,66 @@ Open `htmlcov/index.html` in your browser for detailed coverage breakdown.
 
 ```
 projectile-physics-simulator/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                 # GitHub Actions CI
 ├── src/
 │   └── projectile_simulator/
 │       ├── __init__.py
-│       ├── __main__.py          # Entry point for the package
-│       ├── cli.py               # Command-line interface
-│       ├── physics.py           # Physics calculations
-│       └── visualizer.py        # Plotting and visualization
+│       ├── __main__.py
+│       ├── physics.py             # Physics calculations (range, height, time)
+│       ├── visualizer.py          # 2D trajectory plotting
+│       └── cli.py                 # Command-line interface
 ├── tests/
 │   ├── __init__.py
-│   ├── test_cli.py
-│   ├── test_main.py
 │   ├── test_physics.py
-│   └── test_visualizer.py
-├── .github/
-│   └── workflows/
-│       └── ci.yml
+│   ├── test_visualizer.py
+│   └── test_cli.py
+├── README.md
+├── requirements.txt
+├── requirements-dev.txt
 ├── .gitignore
+├── .pre-commit-config.yaml
+├── pyproject.toml
+├── setup.py
 ├── LICENSE
-├── pyproject.toml               # Project metadata & dependencies
-└── README.md
+└── .coveragerc
 ```
 
 ---
 
-## 🛠️ Development Workflow
+## 🔄 Development Workflow
 
-### Commit Convention
-
-Following [Conventional Commits](https://www.conventionalcommits.org/):
-
-```bash
-feat(physics): add drag force calculation
-fix(visualizer): correct axis labels
-refactor(cli): simplify argument parsing
-docs(readme): update installation guide
-test(physics): add edge case tests
-```
-
-### Code Quality Tools
-
-| Tool | Purpose |
-| :--- | :--- |
-| **Black** | Code formatting |
-| **Ruff** | Linting & import sorting |
-| **MyPy** | Static type checking |
+1. **Fork** the repository
+2. **Create a feature branch**: `git checkout -b feature/your-feature`
+3. **Install pre-commit hooks**: `pre-commit install`
+4. **Commit changes**: `git commit -m "Add your feature"`
+5. **Push**: `git push origin feature/your-feature`
+6. **Open a Pull Request**
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
-
-1. **Fork** the repository
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Commit your changes**: `git commit -m 'feat: add amazing feature'`
-4. **Push to the branch**: `git push origin feature/amazing-feature`
-5. **Open a Pull Request**
-
-**Before submitting a PR, ensure:**
-- ✅ All tests pass (`pytest`)
-- ✅ Code is formatted (`black .`)
-- ✅ Linting passes (`ruff check .`)
-- ✅ No commented-out code or debug prints
-- ✅ New features include tests
-- ✅ Documentation is updated
+Contributions are welcome! Please follow the standard GitHub flow:
+- Open an issue to discuss your idea
+- Submit a pull request with clear description and tests
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
+This project is open-source and available under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author
+## 👤 Author
 
 **Mohammad Hussein**  
-- 🌐 GitHub: [@mohammad-hussein-dev](https://github.com/mohammad-hussein-dev)  
-- 📧 Email: [king.mohamd.09876@gmail.com](mailto:king.mohamd.09876@gmail.com)  
-- 💬 Telegram: [@mohammad_hussein_dev](https://t.me/mohammad_hussein_dev)
-
-> *"I don't just write code — I simulate the universe."*
+- GitHub: [@mohammad-hussein-dev](https://github.com/mohammad-hussein-dev)  
+- Email: king.mohamd.09876@gmail.com  
+- Telegram: @mohammad_hussein_dev
 
 ---
 
-## ⭐ Support the Project
-
-If you found this project helpful, please consider giving it a **star** on GitHub! ⭐  
-It helps others discover it and motivates further development.
-
----
-
-**Built with 🚀 and Python**
+> *"Physics is the law, Mathematics is the language, and Code is the tool to build anything imaginable."*

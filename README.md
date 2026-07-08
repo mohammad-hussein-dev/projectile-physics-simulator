@@ -112,15 +112,17 @@ You will see:
 
 ## 🖼️ Demo
 
-![Trajectory Plot](trajectory_en.png)
+| English | Persian (فارسی) |
+| :---: | :---: |
+| ![Trajectory Plot (English)](trajectory_en.png) | ![نمودار مسیر پرتابه (فارسی)](trajectory_fa.png) |
 
-*The plot shows the projectile trajectory (blue curve), velocity vectors (red arrows), and key points (peak and impact).*
+*The plots show the projectile trajectory (blue curve), velocity vectors (red arrows), and key points (peak and impact).*
 
 ---
 
 ## 📊 Sample Output
 
-### Terminal Output
+### Terminal Output (English)
 
 ```
 🚀 Projectile Physics Simulator
@@ -133,6 +135,21 @@ Gravity: 9.81 m/s²
   Range: 254.84 m
   Max Height: 63.71 m
   Flight Time: 7.21 s
+```
+
+### خروجی ترمینال (فارسی)
+
+```
+🚀 شبیه‌ساز حرکت پرتابه
+
+سرعت اولیه: ۵۰.۰ متر بر ثانیه
+زاویه پرتاب: ۴۵.۰ درجه
+شتاب گرانش: ۹.۸۱ متر بر مجذور ثانیه
+
+📊 نتایج:
+  برد: ۲۵۴.۸۴ متر
+  حداکثر ارتفاع: ۶۳.۷۱ متر
+  زمان پرواز: ۷.۲۱ ثانیه
 ```
 
 ---

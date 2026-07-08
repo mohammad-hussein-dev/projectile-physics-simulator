@@ -9,13 +9,17 @@ Gravity constant: 9.8 m/s² (Earth's surface).
 """
 
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 # Gravitational acceleration constant (m/s²)
 GRAVITY: float = 9.8
 
 
-def calculate_range(velocity: float, angle_deg: float) -> float:
+def calculate_range(
+    velocity: float,
+    angle_deg: float,
+    gravity: Optional[float] = None,
+) -> float:
     """
     Calculate the horizontal range of a projectile.
 
@@ -25,6 +29,7 @@ def calculate_range(velocity: float, angle_deg: float) -> float:
     Args:
         velocity: Initial launch velocity in meters per second (m/s).
         angle_deg: Launch angle in degrees (0° = horizontal, 90° = vertical).
+        gravity: Optional custom gravity (defaults to GRAVITY constant).
 
     Returns:
         The horizontal range in meters.
@@ -36,11 +41,17 @@ def calculate_range(velocity: float, angle_deg: float) -> float:
         >>> calculate_range(10, 45)
         10.20408163265306
     """
+    if gravity is None:
+        gravity = GRAVITY
     theta: float = math.radians(angle_deg)
-    return (velocity ** 2 * math.sin(2 * theta)) / GRAVITY
+    return (velocity ** 2 * math.sin(2 * theta)) / gravity
 
 
-def calculate_max_height(velocity: float, angle_deg: float) -> float:
+def calculate_max_height(
+    velocity: float,
+    angle_deg: float,
+    gravity: Optional[float] = None,
+) -> float:
     """
     Calculate the maximum height reached by a projectile.
 
@@ -49,6 +60,7 @@ def calculate_max_height(velocity: float, angle_deg: float) -> float:
     Args:
         velocity: Initial launch velocity in meters per second (m/s).
         angle_deg: Launch angle in degrees.
+        gravity: Optional custom gravity (defaults to GRAVITY constant).
 
     Returns:
         The maximum height in meters.
@@ -60,11 +72,17 @@ def calculate_max_height(velocity: float, angle_deg: float) -> float:
         >>> calculate_max_height(10, 45)
         2.551020408163265
     """
+    if gravity is None:
+        gravity = GRAVITY
     theta: float = math.radians(angle_deg)
-    return (velocity ** 2 * (math.sin(theta) ** 2)) / (2 * GRAVITY)
+    return (velocity ** 2 * (math.sin(theta) ** 2)) / (2 * gravity)
 
 
-def calculate_time_of_flight(velocity: float, angle_deg: float) -> float:
+def calculate_time_of_flight(
+    velocity: float,
+    angle_deg: float,
+    gravity: Optional[float] = None,
+) -> float:
     """
     Calculate the total time of flight of a projectile.
 
@@ -74,6 +92,7 @@ def calculate_time_of_flight(velocity: float, angle_deg: float) -> float:
     Args:
         velocity: Initial launch velocity in meters per second (m/s).
         angle_deg: Launch angle in degrees.
+        gravity: Optional custom gravity (defaults to GRAVITY constant).
 
     Returns:
         The total time of flight in seconds.
@@ -85,14 +104,17 @@ def calculate_time_of_flight(velocity: float, angle_deg: float) -> float:
         >>> calculate_time_of_flight(10, 45)
         1.4433756729740643
     """
+    if gravity is None:
+        gravity = GRAVITY
     theta: float = math.radians(angle_deg)
-    return 2 * velocity * math.sin(theta) / GRAVITY
+    return 2 * velocity * math.sin(theta) / gravity
 
 
 def generate_trajectory(
     velocity: float,
     angle_deg: float,
-    steps: int = 100
+    steps: int = 100,
+    gravity: Optional[float] = None,
 ) -> Tuple[List[float], List[float]]:
     """
     Generate a set of (x, y) coordinates representing the projectile's path.
@@ -105,6 +127,7 @@ def generate_trajectory(
         velocity: Initial launch velocity in meters per second (m/s).
         angle_deg: Launch angle in degrees.
         steps: Number of discrete points along the trajectory (default: 100).
+        gravity: Optional custom gravity (defaults to GRAVITY constant).
 
     Returns:
         A tuple of two lists: (x_coords, y_coords), where each list contains
@@ -116,19 +139,26 @@ def generate_trajectory(
             y(t) = v₀ × sin(θ) × t - ½ × g × t²
         The time points are evenly spaced from 0 to T (total flight time).
     """
+    if gravity is None:
+        gravity = GRAVITY
     theta: float = math.radians(angle_deg)
-    T: float = calculate_time_of_flight(velocity, angle_deg)
+    T: float = calculate_time_of_flight(velocity, angle_deg, gravity)
+
+    if T <= 0 or steps <= 0:
+        return [], []
 
     # Create a list of time points from 0 to T
-    time_points: List[float] = [i / steps for i in range(int(T * steps) + 1)]
+    num_points: int = int(T * steps) + 1
+    time_points: List[float] = [t * T / (num_points - 1) for t in range(num_points)]
 
     # Compute horizontal and vertical coordinates for each time point
-    x_coords: List[float] = [
-        velocity * math.cos(theta) * t for t in time_points
-    ]
-    y_coords: List[float] = [
-        velocity * math.sin(theta) * t - 0.5 * GRAVITY * t ** 2
-        for t in time_points
-    ]
+    vx: float = velocity * math.cos(theta)
+    vy: float = velocity * math.sin(theta)
+
+    x_coords: List[float] = [vx * t for t in time_points]
+    y_coords: List[float] = [vy * t - 0.5 * gravity * t ** 2 for t in time_points]
+
+    # Ensure y coordinates don't go below zero (impact point)
+    y_coords = [max(0.0, y) for y in y_coords]
 
     return x_coords, y_coords

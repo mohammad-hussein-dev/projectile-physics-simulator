@@ -144,8 +144,9 @@ def generate_trajectory(
     theta: float = math.radians(angle_deg)
     T: float = calculate_time_of_flight(velocity, angle_deg, gravity)
 
+    # Handle edge case: zero velocity or invalid steps
     if T <= 0 or steps <= 0:
-        return [], []
+        return [0.0], [0.0]
 
     # Create a list of time points from 0 to T
     num_points: int = int(T * steps) + 1

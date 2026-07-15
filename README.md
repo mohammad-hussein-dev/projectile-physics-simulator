@@ -277,5 +277,3 @@ This project is open-source and available under the **MIT License**.
 ---
 
 > *"Physics is the law, Mathematics is the language, and Code is the tool to build anything imaginable."*
-
-Mirrored to GitLab ✅

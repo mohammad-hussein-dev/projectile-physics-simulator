@@ -24,6 +24,7 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Author](#-author)
+- [LinkedIn & Community Impact](#-linkedin--community-impact)
 
 ---
 
@@ -271,9 +272,45 @@ This project is open-source and available under the **MIT License**.
 
 **Mohammad Hussein**  
 - GitHub: [@mohammad-hussein-dev](https://github.com/mohammad-hussein-dev)  
+- LinkedIn: [in/mohammad-hussein-dev](https://linkedin.com/in/mohammad-hussein-dev)  
 - Email: king.mohamd.09876@gmail.com  
 - Telegram: @mohammad_hussein_dev
 
 ---
 
-> *"Physics is the law, Mathematics is the language, and Code is the tool to build anything imaginable."*
+## 🌐 LinkedIn & Community Impact
+
+The Projectile Physics Simulator has gained visibility on LinkedIn, sparking conversations about the intersection of physics and software engineering.
+
+### 📊 Post Performance (7 days)
+
+| Content | Impressions | Engagement |
+| :--- | :---: | :---: |
+| Projectile Physics Simulator Launch | 100+ | 1 comment |
+| Django Task Manager | 292 | 2 likes |
+| Personal Branding / Intro Post | 326 | 2 likes |
+| Django Security Fixes | 214 | — |
+| GitHub Portfolio PDF | **786** | 2 likes |
+| **Total** | **1,718+** | |
+
+### 🔗 Featured Posts
+
+- [Projectile Physics Simulator — 96% Coverage, CI/CD](https://www.linkedin.com/posts/mohammad-hussein-dev)
+- [Django Task Manager — Production-Ready](https://www.linkedin.com/posts/mohammad-hussein-dev)
+- [GitHub Portfolio PDF](https://www.linkedin.com/posts/mohammad-hussein-dev)
+
+### 🤝 Professional Connections
+
+I've connected with senior engineers and industry professionals, including:
+
+- **Uzafir Ahmad** — whose physics-inspired engineering approach resonated deeply with this project.  
+  [LinkedIn Post about our conversation](https://www.linkedin.com/posts/mohammad-hussein-dev)
+
+### 📁 Related Resources
+
+- [LinkedIn Post Carousel (PDF)](./assets/Linkedin-Post.pdf) — The 7‑slide visual story used on LinkedIn
+- [GitHub Portfolio PDF](./assets/GitHub-Portfolio.pdf) — Snapshot of my open‑source work
+
+---
+
+> *"Physics is the law. Mathematics is the language. Code is the tool to build anything imaginable."*

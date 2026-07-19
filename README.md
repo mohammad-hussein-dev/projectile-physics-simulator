@@ -309,7 +309,6 @@ I've connected with senior engineers and industry professionals, including:
 ### 📁 Related Resources
 
 - [LinkedIn Post Carousel (PDF)](./assets/Linkedin-Post.pdf) — The 7‑slide visual story used on LinkedIn
-- [GitHub Portfolio PDF](./assets/GitHub-Portfolio.pdf) — Snapshot of my open‑source work
 
 ---
 
